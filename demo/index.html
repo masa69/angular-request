@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="request-sample">
+	<head>
+		<meta charset="UTF-8">
+		<title>angular-request | masa69</title>
+	</head>
+	<body ng-controller="IndexController as self">
+
+		<h4>POST</h4>
+		<input type="text" ng-model="self.posts.title" placeholder="title">
+		<input type="text" ng-model="self.posts.body" placeholder="body">
+
+		<h4>GET</h4>
+		<input type="text" ng-model="self.gets.title" placeholder="title">
+		<input type="text" ng-model="self.gets.body" placeholder="body">
+
+		<h4>FILES</h4>
+		<input type="file" input-file-setter="self.files.image">
+
+		<button type="button" ng-click="self.send()">SEND</button>
+
+		<pre>{{ self.responseBody }}</pre>
+
+		<script type~"text/javascript" src="../bower_components/angular/angular.min.js"></script>
+		<script type~"text/javascript" src="../angular-request.js"></script>
+		<script type~"text/javascript" src="script.js"></script>
+	</body>
+</html>

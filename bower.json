@@ -1,0 +1,30 @@
+{
+  "name": "angular-request",
+  "description": "AngularJs $http wrapper",
+  "version": "0.1.0",
+  "homepage": "https://github.com/masa69/angular-request",
+  "authors": [
+    "masa69 <psychedelic.nekopunch@gmail.com>"
+  ],
+  "main": "angular-request.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "angularjs",
+    "angular",
+    "javascript",
+    "js",
+    "$http",
+    "request",
+    "xhr"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
