@@ -5,15 +5,15 @@ angular.module('angular-request', [])
 
 	var self = {};
 
-	var API_URL = '';
+	var apiUrl = '';
 
 	self.setUrl = function(url) {
-		API_URL = url;
+		apiUrl = url;
 	};
 
 	self.get = function(url, params, callback) {
 
-		var url = API_URL + url;
+		var url = apiUrl + url;
 		var sendParams = (params) ? params : {};
 
 		$http({
@@ -32,7 +32,7 @@ angular.module('angular-request', [])
 
 	self.post = function(url, params, callback) {
 
-		var url = API_URL + url;
+		var url = apiUrl + url;
 		var sendParams = (params) ? params : {};
 
 		$http({
@@ -51,7 +51,7 @@ angular.module('angular-request', [])
 
 	self.upload = function(url, params, callback) {
 
-		var url = API_URL + url;
+		var url = apiUrl + url;
 		var sendParams = new FormData();
 
 		angular.forEach(params, function(param, key) {
