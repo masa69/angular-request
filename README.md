@@ -1,6 +1,13 @@
 # angular-request
 
-## usage
+## Install
+
+```bash
+$ bower install angular-request --save
+```
+
+
+## Usage
 
 ```html
 <script type="text/javascript" src="angular-request.js"></script>
@@ -19,7 +26,7 @@ app.controller('IndexController', ['$request', function($request) {
 ```
 
 
-## method
+## Method
 
 ### $request.post(url, param, callback)
 
