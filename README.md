@@ -86,14 +86,12 @@ app.directive('inputFileSetter', [function()
 	return {
 		restrict: 'A',
 		scope: { model: '=inputFileSetter' },
-		link: function(scopes, elements, attrs)
-		{
+		link: function(scopes, elements, attrs) {
+
 			var element = elements[0];
 
-			var setFile = function()
-			{
-				scopes.$apply(function()
-				{
+			var setFile = function() {
+				scopes.$apply(function() {
 					scopes.model = (element.files[0]) ? element.files[0] : null;
 				});
 			};
