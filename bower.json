@@ -1,7 +1,7 @@
 {
   "name": "angular-request",
   "description": "AngularJs $http wrapper",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/masa69/angular-request",
   "authors": [
     "masa69 <psychedelic.nekopunch@gmail.com>"
