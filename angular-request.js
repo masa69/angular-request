@@ -1,6 +1,5 @@
 angular.module('angular-request', [])
 .service('$httpRequest', ['$http', '$httpParamSerializerJQLike', function($http, $httpParamSerializerJQLike) {
-
 	'use strict';
 
 	var self = {};
