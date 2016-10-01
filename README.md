@@ -19,8 +19,8 @@ var app = angular.module('myApp', ['angular-request']);
 ```
 
 ```js
-// use $request
-app.controller('IndexController', ['$request', function($request) {
+// use $httpRequest
+app.controller('IndexController', ['$httpRequest', function($httpRequest) {
 	// ~~ code
 }]);
 ```
@@ -28,7 +28,7 @@ app.controller('IndexController', ['$request', function($request) {
 
 ## Method
 
-### $request.post(url, param, callback)
+### $httpRequest.post(url, param, callback)
 
 * **url** - string
 * **param** - object|null
@@ -38,13 +38,13 @@ app.controller('IndexController', ['$request', function($request) {
 	* **body** - (data)
 
 ```js
-$request.post('http://api.example/url', params, function(error, httpResponse, body) {
+$httpRequest.post('http://api.example/url', params, function(error, httpResponse, body) {
 	// ~~ code
 });
 ```
 
 
-### $request.get(url, param, callback)
+### $httpRequest.get(url, param, callback)
 
 * **url** - string
 * **param** - object|null
@@ -54,13 +54,13 @@ $request.post('http://api.example/url', params, function(error, httpResponse, bo
 	* **body** - (data)
 
 ```js
-$request.get('http://api.example/url', params, function(error, httpResponse, body) {
+$httpRequest.get('http://api.example/url', params, function(error, httpResponse, body) {
 	// ~~ code
 });
 ```
 
 
-### $request.upload(url, param, callback)
+### $httpRequest.upload(url, param, callback)
 
 * **url** - string
 * **param** - object|null
@@ -70,7 +70,7 @@ $request.get('http://api.example/url', params, function(error, httpResponse, bod
 	* **body** - (data)
 
 ```js
-$request.upload('http://api.example/url', params, function(error, httpResponse, body) {
+$httpRequest.upload('http://api.example/url', params, function(error, httpResponse, body) {
 	// ~~ code
 });
 ```
@@ -112,25 +112,4 @@ app.directive('inputFileSetter', [function()
 
 ```html
 <input type="file" input-file-setter="self.files.model">
-```
-
-
-### $request.setUrl(url)
-
-* **url** - string
-
-```js
-$request.setUrl('http://api.example/');
-```
-
-
-#### example
-
-```js
-$request.setUrl('http://api.example/');
-
-// e.g. http://api.example/user/list
-$request.post('user/list', params, function(error, httpResponse, body) {
-	// ~~ code
-});
 ```

@@ -1,6 +1,6 @@
 var app = angular.module('request-sample', ['angular-request']);
 
-app.controller('IndexController', ['$request', function($request) {
+app.controller('IndexController', ['$httpRequest', function($httpRequest) {
 
 	'use strict';
 
@@ -22,21 +22,23 @@ app.controller('IndexController', ['$request', function($request) {
 		image : null,
 	};
 
+	self.configs = $httpRequest.config;
+
 	self.send = function() {
 
 		self.responseBody = '';
 
-		$request.post('api/post.php', self.posts, function(error, httpResponse, body) {
+		$httpRequest.post('api/post.php', self.posts, function(error, httpResponse, body) {
 			console.log(error, httpResponse, body);
 			self.responseBody += body;
 		});
 
-		$request.get('api/get.php', self.gets, function(error, httpResponse, body) {
+		$httpRequest.get('api/get.php', self.gets, function(error, httpResponse, body) {
 			console.log(error, httpResponse, body);
 			self.responseBody += body;
 		});
 
-		$request.upload('api/files.php', self.files, function(error, httpResponse, body) {
+		$httpRequest.upload('api/files.php', self.files, function(error, httpResponse, body) {
 			console.log(error, httpResponse, body);
 			self.responseBody += body;
 		});
@@ -44,19 +46,16 @@ app.controller('IndexController', ['$request', function($request) {
 }]);
 
 
-app.directive('inputFileSetter', [function()
-{
+app.directive('inputFileSetter', [function() {
 	return {
 		restrict: 'A',
 		scope: { model: '=inputFileSetter' },
-		link: function(scopes, elements, attrs)
-		{
+		link: function(scopes, elements, attrs) {
+
 			var element = elements[0];
 
-			var setFile = function()
-			{
-				scopes.$apply(function()
-				{
+			var setFile = function() {
+				scopes.$apply(function() {
 					scopes.model = (element.files[0]) ? element.files[0] : null;
 				});
 			};
